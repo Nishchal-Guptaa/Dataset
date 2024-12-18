@@ -1,0 +1,34 @@
+from bs4 import BeautifulSoup
+import requests
+import pandas as pd
+
+url = 'https://quotes.toscrape.com/'
+page = requests.get(url=url)
+soup = BeautifulSoup(page.content, 'html.parser')
+quote = soup.findAll('span', attrs={"class":"text"})
+author = soup.findAll('small', attrs={'class':'author'})
+
+quote_list = []
+author_list = []
+
+for i in quote:
+    quote_list.append(i.text)
+
+for i in author:
+    author_list.append(i.text)
+
+# print(list(enumerate(author_list)))
+# print("AUTHORS :-\n",author_list,end=" ")
+# print()
+# print("QUOTES :- \n",quote_list,end=" ")
+# print()
+res = zip(author_list,quote_list)
+res_var = list(res)
+res_var.sort()
+# print("Result :-\n",res_var)
+print()
+
+df = pd.DataFrame(res_var,columns=['Authors','Quotes'])
+print(df)
+
+df.to_csv("Authors And Their respective Quotes.csv")
