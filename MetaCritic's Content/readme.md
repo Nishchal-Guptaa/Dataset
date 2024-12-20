@@ -1,0 +1,1 @@
+For creating this dataset I have chosen a random site named: "https://www.metacritic.com". Its games, movies and tv shows contents have been scrapped and been kept in a csv file which I have named as "MetaCritic's Most loved by People.csv".
