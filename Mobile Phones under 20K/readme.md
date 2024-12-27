@@ -1,1 +1,2 @@
 This dataset has been created using webscrapping the flipkart website. It has been tried to scrape mobile phone's names, their prices, ratings and important specifications. Some of the values couldn't be found so their text were replaces by "N/A". This sheet contains "336 rows x 25 columns". For more number of dataset, in line number 7 i.e., for page_num in range(1,16): just change the values.
+After scrapping there were several cells with 'N/A' values and also there were duplicate Mobile Names. This test.csv file contains cleaned data.
